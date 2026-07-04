@@ -1,5 +1,9 @@
-git init  --> one time each project to start git
-git add .
+git config --global user.email "mdbonyamin2002@gmail.com"
+git config --global user.name "BonyAminAIUB"
+git config --global --list    --> it shows my email and username
+
+git init        --> one time each project to start git
+git add .       --> every time to add
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/BonyAminAIUB/Full_Stack_Practice_Code.git
