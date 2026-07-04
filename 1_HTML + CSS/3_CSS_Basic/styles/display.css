@@ -1,0 +1,19 @@
+/* span means ekta particular range er vitor kaj korbe */
+article{
+    background-color: aquamarine;
+    text-align: justify;
+}
+h2{
+    text-align: center;
+}
+#second{
+    background-color: rgb(212, 235, 82);
+    /* display: none;  => it means this article section doesn't show on the display */
+    /* visibility: hidden;  => it means browser show the blank space*/
+}
+span{
+    color: rgb(250, 3, 241);
+    /* display: block; => new line create */
+    border: 2px solid red;
+    /* width: 250px; => it works when display blocked */
+}

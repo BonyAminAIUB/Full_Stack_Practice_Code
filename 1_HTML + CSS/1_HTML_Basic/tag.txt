@@ -1,0 +1,46 @@
+html --> opening tag
+head --> heading tag
+body --> body tag
+title --> title of the web site
+meta --> 
+p --> paragraph
+b, strong --> strong or bold
+i, em --> emphasize or italic 
+br --> break 
+h1 - h6 
+ul li --> unordered list 
+ol li --> ordered list
+a href --> for link 
+img src --> for taking image 
+hr --> horzontal line
+form --> for making form 
+input --> taking input 
+button --> making button 
+select option --> 
+label --> 
+textarea --> 
+<!-- Comments -->
+heading --> heading tag (main focus section) -> hero section
+footer --> footer tag
+nav --> navigation bar 
+header --> upper content of the web page
+small --> font size smaller
+main --> main content of the web site 
+section --> main er vitor onek gulo section banano jay
+aside --> side navigation bar
+article --> article section for bloging  
+div --> divition (group elements)
+span --> 
+audio --> audio tag
+video --> video tag
+iframe --> special tag for video sharing from YouTube or any other
+
+
+
+#some inportant keyboard shortcut
+alt + shift + f = auto formating
+alt + shift + down = same copy bellow
+ctrl + shift + n = new folder create
+ctrl + b = left bar chole jabe
+
+

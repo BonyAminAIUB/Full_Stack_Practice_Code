@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Selectors in CSS</title>
+    <style>
+        /* 
+        tag selector
+            tag{
+            } 
+        class selector
+            .class{
+            }
+        id selector 
+            #id{
+            }
+        universer selector
+            *{
+            } 
+        */
+
+        ol,
+        ul,
+        .special {
+            background-color: bisque;
+        }
+
+        p,
+        h2 {
+            background-color: rgb(22, 127, 220);
+        }
+
+        .red {
+            color: rgb(236, 13, 13);
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .green {
+            color: rgb(80, 207, 80);
+        }
+
+        .green.bold {
+            font-size: 1.5rem;
+        }
+
+        /* (>) means imediate child  */
+        article > { 
+            background-color: aquamarine;
+        }
+
+        article p {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>This is a heading</h2>
+    <h2 class="special">This is also a heading</h2>
+    <h2>This is also a heading</h2>
+    <p>This is a simple paragraph</p>
+    <ol>
+        <li>Item1</li>
+        <li class="red bold">Item2</li>
+        <li>Item3</li>
+        <li class="bold">Item4</li>
+        <li>Item5</li>
+    </ol>
+    <article>
+        <h3>This is a heading</h3>
+        <p>This is a simple paragraph</p>
+        <p>This is a simple paragraph</p>
+    </article>
+    <article>
+        <h3>This is a heading</h3>
+        <p>This is a simple paragraph</p>
+        <p>This is a simple paragraph</p>
+        <div>
+            <p>This is an inside div paragraph</p>
+            <p>This is an inside div paragraph</p>
+        </div>
+    </article>
+    <ul>
+        <li class="green bold">Item6</li>
+        <li>Item7</li>
+        <li class="red">Item8</li>
+        <li>Item9</li>
+        <li class="green">Item110</li>
+    </ul>
+</body>
+
+</html>

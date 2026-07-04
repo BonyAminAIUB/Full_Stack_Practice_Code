@@ -1,0 +1,24 @@
+.blog{
+    background-color: aquamarine;
+    width: 400px;
+    margin: 50px;
+    box-shadow: -10px 20px 700px rgb(214, 23, 239); /* x-axis y-axis spread color */
+    background: linear-gradient(red, yellow, green);
+}
+#header{
+    background-color: chocolate;
+    height: 300px;
+    text-align: center;
+    padding-top: 50px;
+    background-image: url('/Milestone1/1_HTML_Basic/images/My_img.jpg');
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+    color: rgb(254, 176, 59);
+    border-radius: 80px;
+}
+.blog-4{
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(red, blue);
+}

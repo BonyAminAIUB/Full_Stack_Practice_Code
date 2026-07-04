@@ -1,0 +1,35 @@
+Git vs GitHub
+
+
+Git:
+
+    --> Git is a distributed version control system.
+    --> It tracks and manages changes to files in a project.
+    --> Developers use Git locally on their computers.
+    --> It allows for offline work and commits changes locally.
+    --> It is primarily a command-line tool with various commands.
+    --> Git is open source and can be used independently.
+
+Examples of Git commands:
+
+    --> git init
+    --> git add
+    --> git commit
+    --> git branch
+
+
+GitHub:
+
+    --> GitHub is a web-based hosting service and platform for Git repositories.
+    --> It provides a convenient and feature-rich environment for hosting Git repositories.
+    --> Developers use GitHub to store and share their Git repositories remotely.
+    --> It enables collaboration and synchronization of repositories across different locations.
+    --> It has a web-based interface for managing repositories and interacting with other developers.
+    --> GitHub offers free and paid plans for hosting public and private repositories.
+
+Examples of GitHub features:
+
+    --> Pull requests
+    --> Issue tracking
+    --> Repository forks
+    --> Code discussions
