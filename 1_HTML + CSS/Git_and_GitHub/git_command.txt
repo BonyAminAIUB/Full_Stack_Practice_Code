@@ -15,3 +15,13 @@ then
 git add .
 git commit -m "any message"
 git push
+
+
+some advance command
+
+git clone https://github.com/BonyAminAIUB/Full_Stack_Practice_Code.git
+git checkout main  --> branch change to main
+git branch   --> show all the branch 
+git checkout -b branch_name   --> create new branch 
+git push --set-upstream origin branch_name   --> push file to a new file 
+git pull   --> change file download to my local repo
