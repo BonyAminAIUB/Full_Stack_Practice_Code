@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .container{
+            /* position: relative; */
+            border: 3px solid red;
+        }
+        .container div{
+            border: 3px dotted purple;
+            width: 200px;
+        }
+        /* .ring{
+            position: relative;
+            left: 50px;
+            top: 20px; 
+        } */
+        /* .ring{
+            position: absolute;
+            top: 50px;
+            right: 50px; 
+        } */
+        /* .ring{
+            position: sticky;
+            top: 10px;
+        } */
+        .ring{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        .box{
+            height: 200;
+            border: 2px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>static</li>
+        <li>relative</li>
+        <li>absolute</li>
+        <li>sticky</li>
+        <li>fixed</li>
+    </ul>
+    <!-- .container>div*3>img -->
+     <div class="container">
+        <div class="boy"><img src="/1_HTML + CSS/1_HTML_Basic/images/My_img.jpg" alt=""></div>
+        <div class="ring"><img src="/1_HTML + CSS/1_HTML_Basic/images/My_img.jpg" alt=""></div>
+        <div class="water"><img src="/1_HTML + CSS/1_HTML_Basic/images/My_img.jpg" alt=""></div>
+
+        <div>
+            <!-- div.box*25{item-$} -->
+             <div class="box">item-1</div>
+             <div class="box">item-2</div>
+             <div class="box">item-3</div>
+             <div class="box">item-4</div>
+             <div class="box">item-5</div>
+             <div class="box">item-6</div>
+             <div class="box">item-7</div>
+             <div class="box">item-8</div>
+             <div class="box">item-9</div>
+             <div class="box">item-10</div>
+             <div class="box">item-11</div>
+             <div class="box">item-12</div>
+             <div class="box">item-13</div>
+             <div class="box">item-14</div>
+             <div class="box">item-15</div>
+             <div class="box">item-16</div>
+             <div class="box">item-17</div>
+             <div class="box">item-18</div>
+             <div class="box">item-19</div>
+             <div class="box">item-20</div>
+             <div class="box">item-21</div>
+             <div class="box">item-22</div>
+             <div class="box">item-23</div>
+             <div class="box">item-24</div>
+             <div class="box">item-25</div>
+        </div>
+     </div>
+     <div>
+        <h3>Another container</h3>
+        <!-- .box*12 -->
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+     </div>
+</body>
+</html>

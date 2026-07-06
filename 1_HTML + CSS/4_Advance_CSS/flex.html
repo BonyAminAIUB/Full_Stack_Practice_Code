@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    <link rel="stylesheet" href="/1_HTML + CSS/4_Advance_CSS/styles/nav.css">
+    <style>
+        .container{
+            display: flex;
+            /* flex-direction: column; */
+            /* gap: 20px; */
+            justify-content: center;
+        }
+        .box{
+            border: 3px solid blue;
+            height: 100px;
+            font-size: 2rem;
+        }
+        div{
+            font-size: 2rem;
+        }
+        .user-container{
+            /* display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            flex-wrap: wrap; */
+            border: 3px solid green;
+        }
+        .user{
+            border: 3px solid red;
+            height: 100px;
+        }
+        .pic-container{
+            display: flex;
+            border: 3px solid green;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        .picture{
+            border: 3px solid purple;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- li*4>a -->
+            <li><a href="flex.html">Flex</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href=""></a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!-- .user-container>.pic{picture} -->
+    <div class="pic-container">
+        <div class="picture">picture</div>
+    </div>
+    <!-- .user-container>.user*5{user-$} -->
+    <div class="user-container">
+        <div class="user">user-1</div>
+        <div class="user">user-2</div>
+        <div class="user">user-3</div>
+        <div class="user">user-4</div>
+        <div class="user">user-5</div>
+        <div class="user">user-6</div>
+        <div class="user">user-7</div>
+        <div class="user">user-8</div>
+        <div class="user">user-9</div>
+        <div class="user">user-10</div>
+        <div class="user">user-11</div>
+        <div class="user">user-12</div>
+        <div class="user">user-13</div>
+        <div class="user">user-14</div>
+        <div class="user">user-15</div>
+        <div class="user">user-16</div>
+        <div class="user">user-17</div>
+        <div class="user">user-18</div>
+        <div class="user">user-19</div>
+        <div class="user">user-20</div>
+    </div>
+    <div class="container">
+        <div class="box">box - 1</div>
+        <div class="box">box - 2</div>
+        <div class="box">box - 3</div>
+        <div class="box">box - 4</div>
+        <div class="box">box - 5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td, th{
+            border: 1px solid gray;
+            padding: 3px 10px;
+        }
+        th{
+            background-color: antiquewhite;
+        }
+        tfoot td{
+            text-align: right;
+            font-size: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>HTML Table</h2>
+        <table>
+            <caption>Data for players</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Leo Messi</td>
+                    <td>Striker</td>
+                    <td>messi@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Ronaldo</td>
+                    <td>Striker</td>
+                    <td>ronaldo@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Neymar</td>
+                    <td>Striker</td>
+                    <td>neymar@gmail.com</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">by fifa</td>
+                </tr>
+            </tfoot>
+        </table>
+        <ul>
+            <li>Table: table</li>
+            <li>table head: thead</li>
+            <li>table body: tbody</li>
+            <li>table row: tr</li>
+            <li>table data: td</li>
+            <li>table header data: th</li>
+            <li>table footer: tfoot</li>
+        </ul>
+    </main>
+</body>
+</html>
