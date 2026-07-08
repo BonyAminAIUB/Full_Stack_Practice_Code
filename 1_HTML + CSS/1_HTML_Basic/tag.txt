@@ -42,5 +42,6 @@ alt + shift + f = auto formating
 alt + shift + down = same copy bellow
 ctrl + shift + n = new folder create
 ctrl + b = left bar chole jabe
+ctrl + j = open new terminal
 
 
