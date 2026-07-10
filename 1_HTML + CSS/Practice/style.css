@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 100%;
+}
+
+/* Navigation part start */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2E2622;
+    align-items: center;
+    padding: 18px 8%;
+}
+
+section{
+    padding: 80px 8%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.coffee-color {
+    color: #E9B44C;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("./images/bg-image.avif");
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 20px;
+}
+.header-content button{
+    width: 20%;
+    padding: 10px 0;
+    background-color: #E9B44C;
+    border-radius: 18px;
+}
+
+/* Our story section */
+
+.our-story-section{
+    background-color: #FBF6EF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.our-story-section div img{
+    width: 100%;
+    border-radius: 6px;
+}
+.our-story-right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 50px;
+}
+.our-story-right-side h2{
+    padding-bottom: 25px;
+}
+.our-story-right-side p{
+    color: #5A4F47;
+    padding-bottom: 10px;
+}
+.our-story-right-side button{
+    width: 25%;
+    height: 50px;
+    border: 0;
+    padding: 10px 0;
+    background-color: #E9B44C;
+    border-radius: 24px;
+    font-weight: bold;
+}
+/* popular-picks-part */
+.popular-picks-part{
+    background-color: #F1E7D8;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+}
+.popular-picks-para{
+    color: #E9B44C;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.popular-picks-part h2{
+    align-items: center;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.card-container .card{
+    background-color: #FFFFFF;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.card img{
+    padding-bottom: 12px;
+}
+.card h3{
+    padding: 12px;
+}
+/* What makes us section */
+.What-makes-section{
+    background-color: #FBF6EF;
+}
+.What-makes-section div p{
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.What-makes-section div h2{
+
+    align-items: center;
+    text-align: center;
+    padding-bottom: 25px;
+}
+.what-menu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 30px;
+}
+.what-menu-card{
+    align-items: center;
+    text-align: center;
+}
+.what-menu-card img{
+    padding-bottom: 12px;
+}
+.when-open-top{
+    align-items: center;
+    text-align: center;
+}
+.when-open-top p{
+    padding-bottom: 12px;
+}
+/* Table */
+section{
+    background-color: #FBF6EF;
+}
+table{
+    width: 50%;
+    border-collapse: collapse;
+    margin: 50px auto;
+    background-color: #FBF6EF;
+}
+td, th{
+    border: 3px solid #2E2622;
+    padding: 12px 20px;
+}
+thead{
+    background-color: #2E2622;
+    text-align: left;
+}
+/* 2nd last part */
+.image-footer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.image-footer img{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+.first-footer{
+    width: 260px;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 18px;
+}
+.second-footer{
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    text-decoration: 200px;
+    background-color: white;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+}
+/* Footer Part */
+.footer-part{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2E2622;
+    color: #CFC6BB;
+    gap: 50px;
+}
+.footer-part div h3{
+    padding-bottom: 20px;
+}
+.footer-part div p{
+    padding-bottom: 15px;
+}
+
+
+

@@ -1,0 +1,192 @@
+#Border:
+
+border has 3 property: border: width style color;
+	width means Border thickness 
+	style --> solid, dashed, dotted, double, groove, ridge, hidden, none, outset
+	color --> any color
+	
+side border:
+
+border-top: 2px solid red;
+border-bottom: 2px solid red;
+border-left: 2px solid red;
+border-right: 2px solid red;
+	
+border-style: solid;
+
+border-color: black;
+
+border-radius: 10px;
+border-radius: 50%;
+border: none;
+
+text-align: center;
+text-align: justify;
+text-align: left;
+text-align: right;
+text-align: end;
+
+
+
+
+#Margin:
+
+margin: 0;             			//no margin
+margin: 10px;          			// top, right, bottom, left
+margin: 10px 10px;     			//top-bottom, right-left
+margin: 10px 10px 10px; 		//top, right-left, bottom
+margin: 10px 10px 10px 10px;    //top, right, bottom, left
+margin: 0 auto;
+margin: auto 0;
+
+margin-top: 10px;
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 10px;
+
+
+
+#Padding:
+
+padding: 0;						//no padding
+padding: 10px;					// top, right, bottom, left
+padding: 10px 10px;				//top-bottom, right-left
+padding: 10px 10px 10px;		//top, right-left, bottom
+padding: 10px 10px 10px 10px;	//top, right, bottom, left
+
+padding-top: 10px;
+padding-right: 10px;
+padding-left: 10px;
+padding-bottom: 10px;
+
+
+
+#Display
+
+display: block;    
+display: none;
+display: inline;
+display: inline-block;	
+
+display: flex;
+display: grid;
+justify-content: center;   // text top-center
+align-content: center  	   // text middle-center
+gap: 20px;				   // gap between text
+flex-direction: row;
+flex-direction: column;
+
+
+
+#Box-shadow
+
+box-shadow: offset-x offset-y blur-radius spread-radius color;
+box-shadow: 20px 20px 10px black;
+
+box-shadow:   //multiple shadow
+0 2px 5px rgba(0,0,0,.2),
+0 10px 20px rgba(0,0,0,.15);
+
+
+
+#Background
+
+backgroud-color; black;
+backgroud-image: url("");
+backgroud-repeat: no-repeat;
+backgroud-repeat: repeat-x;
+backgroud-repeat: repeat-y;
+backgroud-size: cover;
+backgroud-position: center;   // backgroud-image position 
+backgroud-position: top center;
+backgroud-position: bottom center;
+backgroud-position: left center;
+backgroud-position: right center;
+
+
+
+
+#Font
+
+font-family: Arial;
+font-size: 10px;
+
+font-weight: bold;
+font-weight: bolder;
+font-weight: normal;
+font-weight: lighter;
+
+font-style: italic;
+font-style: italic;
+font-style: oblique;
+
+line-height:30px;
+letter-spacing:5px;   // difference between letter
+
+text-transform:uppercase;
+text-transform:lowercase;
+text-transform:capitalize;
+
+font-variant: small-caps;
+
+font: font-style font-weight font-size/line-height font-family;
+
+
+
+#Flex
+
+flex: 1;  // means both side take same space
+display: flex;
+gap: 20px;
+
+justify-content: center;
+justify-content: space-between;
+justify-content: space-around;
+justify-content: start;
+justify-content: end;
+justify-content: left;
+justify-content: right;
+
+flex-direction: row;   //default
+flex-direction: column;
+flex-direction: column-reverse;
+flex-direction: row-reverse;
+
+
+
+list-style: none;
+text-decoration: none;
+
+
+
+#Grid (2D)
+
+display: grid;
+grid-template-column: 100px;  // all column are 100px
+grid-template-column: 100px 100px;  // all border are part into two column which all are 100px
+grid-template-column: 100px 100px 100px;  // all border are part into three column which all are 100px
+grid-template-columns: repeat(3, 150px);  // same as upper line
+grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(3, 1fr) 2fr;
+grid-template-columns: 100px auto;
+gap: 20px;
+
+
+
+
+position: relative;  // iccha moto sorte parbe
+left: 20px // left a sore jabe 20px
+
+position: absolute;
+top: 20px;
+
+position: sticky;
+top: 20px;
+
+position: fixed;
+top: 20px;
+
+
+
+object-fit: cover;
+border-radius: 10px;
