@@ -197,6 +197,7 @@ thead{
     max-height: 400px;
     object-fit: cover;
     display: block;
+    border-radius: 20px;
 }
 .first-footer{
     width: 260px;
