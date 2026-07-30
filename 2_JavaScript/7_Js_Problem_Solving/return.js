@@ -25,3 +25,4 @@ const sumOfFilterArray = getSum(filterArray);
 
 console.log('Even array', filterArray);
 console.log('Sum of the even numbers of array',sumOfFilterArray);
+
