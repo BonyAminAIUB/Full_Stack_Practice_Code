@@ -1,0 +1,10 @@
+Primitive data type --> Number, String, Boolean, Undefined, Null, BigInt, Symbol
+
+Non Primitive data type --> Array, Object, Function
+
+Falsy value --> false, 0, "", null, undefined, NaN
+
+== (Loose Equality)  --> Only value compare
+
+=== (Strict Equality)  --> value and data type compare
+
