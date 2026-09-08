@@ -1,0 +1,47 @@
+.countries {
+    width: 90%;
+    max-width: 1300px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.countries + * {
+    margin-top: 20px;
+}
+
+.visited-flags {
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #111c33;
+    border: 1px solid #243b5a;
+    border-radius: 12px;
+}
+
+
+.visited-flags img {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    margin: 6px;
+    border-radius: 6px;
+    border: 1px solid #475569;
+}
+
+
+@media (max-width: 900px) {
+    .countries {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .countries {
+        grid-template-columns: 1fr;
+        width: 92%;
+    }
+}

@@ -1,0 +1,86 @@
+.country {
+    background-color: #111c33;
+    border: 1px solid #243b5a;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.country:hover {
+    transform: translateY(-7px);
+    border-color: #3b82f6;
+    box-shadow: 0 12px 30px rgba(30, 64, 175, 0.25);
+}
+
+
+.country h3 {
+    color: #93c5fd;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+
+.country img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+
+    border-radius: 10px;
+    border: 1px solid #334155;
+
+    margin-bottom: 15px;
+}
+
+
+.country p {
+    color: #cbd5e1;
+    font-size: 15px;
+    margin: 8px 0;
+}
+
+
+.country button {
+    background-color: #1d4ed8;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px 15px;
+    margin: 8px 4px 0;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.country button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+
+
+.country-visited {
+    background-color: #12304a;
+    border-color: #0ea5e9;
+}
+
+.country-visited h3 {
+    color: #67e8f9;
+}
+
+.country-visited button {
+    background-color: #0891b2;
+}
+
+.country-visited button:hover {
+    background-color: #06b6d4;
+}
