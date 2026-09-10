@@ -20,7 +20,15 @@ export interface CountryType{
     }, 
     continents : {
         'continents' : string,
-    }
+    },
+    currencies : {
+        currencies : {
+            JMD : {
+                'name' : string,
+                'symbol' : string,
+            }
+        }
+    },
     flags: {
         flags: {
             "png" : string,
