@@ -3,7 +3,7 @@ export interface Iplayer{
     playerImg : string,
     origin : string,
     playerType : string,
-    bowlingStyle : string,
     battingStyle : string,
-    price : 18000000
+    bowlingStyle : string,
+    price : number,
 }

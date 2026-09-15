@@ -6,7 +6,7 @@ import Players from './components/players/Players';
 import './types/player';
 import type { Iplayer } from './types/player';
 
-const playerPromise = async ():Promise<Iplayer[]> => {
+const playersPromise = async ():Promise<Iplayer[]> => {
   const res = await fetch('/data.json');
   const data = await res.json();
   return data;
@@ -19,7 +19,7 @@ function App() {
       <Nav></Nav>
       <Banner></Banner>
       <Suspense fallback={<h2>Loading...</h2>}>
-        <Players playerPromise={playerPromise()}></Players>
+        <Players playersPromise={playersPromise()}></Players>
       </Suspense>
     </>
   )
