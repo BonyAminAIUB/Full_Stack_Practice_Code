@@ -1,182 +1,212 @@
 [
   {
     "playerName": "Shakib Al Hasan",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://media.gettyimages.com/id/1711546167/photo/guwahati-india-shakib-al-hasan-of-bangladesh-poses-for-a-portrait-ahead-of-the-icc-mens.jpg?s=612x612&w=gi&k=20&c=58OYvHser3EhyvI8QUKnKVrGnMivmazsS8RoEjvm0fc=",
     "origin": "Bangladesh",
     "playerType": "All-rounder",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Left-arm orthodox",
-    "price": 12000000
+    "rating" : "4.8",
+    "price": 800
   },
   {
     "playerName": "Mustafizur Rahman",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1c56tzUuSALT0apSfSBihHle-MKzzkXp8LzDkPlkF65JM-unz4ozJlU0&s=10",
     "origin": "Bangladesh",
     "playerType": "Bowler",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Left-arm fast-medium",
-    "price": 10000000
+    "rating" : "4.7",
+    "price": 700
   },
   {
     "playerName": "Virat Kohli",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://media.gettyimages.com/id/2200264207/photo/dubai-united-arab-emirates-virat-kohli-of-india-poses-for-a-portrait-during-the-icc-champions.jpg?s=612x612&w=gi&k=20&c=gqyqlCaQ93bOeNadJlPG9ec7fsoo9ENqK-9kscfygJg=",
     "origin": "India",
     "playerType": "Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium",
-    "price": 18000000
+    "rating" : "4.8",
+    "price": 800
   },
   {
     "playerName": "Rohit Sharma",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://media.gettyimages.com/id/2241622860/photo/perth-australia-rohit-sharma-poses-during-an-india-odi-international-headshot-session-on.jpg?s=612x612&w=gi&k=20&c=YSmsGNfrOe5ZlSRJiEuEHIC50XtDmVQ5Ee1buzzwsvw=",
     "origin": "India",
     "playerType": "Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
-    "price": 16000000
+    "rating" : "4.6",
+    "price": 600
   },
   {
     "playerName": "Babar Azam",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://media.gettyimages.com/id/2182244301/photo/melbourne-australia-babar-azam-of-pakistan-poses-during-a-pakistan-odi-headshots-session-on.jpg?s=612x612&w=gi&k=20&c=reiALfOMZjGWLP952m5Vl95g31SJuDU2TMD-Uqkpzk8=",
     "origin": "Pakistan",
     "playerType": "Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
-    "price": 15000000
+    "rating" : "4.7",
+    "price": 550
   },
   {
     "playerName": "Joe Root",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQBy11qGa6fHDSoXh3xLpgCtfjIJev_ZaBC_VI2qz1pQ&s",
     "origin": "England",
     "playerType": "Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
-    "price": 14500000
+    "rating" : "4.8",
+    "price": 500
   },
   {
     "playerName": "Kane Williamson",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://media.gettyimages.com/id/2200057371/photo/karachi-pakistan-kane-williamson-of-new-zealand-poses-for-a-portrait-during-the-icc-champions.jpg?s=612x612&w=gi&k=20&c=WIQeDubr46s4LoCPfasdNXAQZ_LIVfb4b_S2IyfbZxM=",
     "origin": "New Zealand",
     "playerType": "Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
-    "price": 14000000
+    "rating" : "4.8",
+    "price": 600
   },
   {
     "playerName": "Steve Smith",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkrjLstLKTz-kcSJ_BunHShzO7br4xDFkjVzi811OQhe_n-zxVCFak3GEo&s=10",
     "origin": "Australia",
     "playerType": "Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm leg break",
-    "price": 14000000
+    "rating" : "4.7",
+    "price": 600
   },
   {
     "playerName": "Jasprit Bumrah",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/63755.png",
     "origin": "India",
     "playerType": "Bowler",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm fast",
-    "price": 17500000
+    "rating" : "4.5",
+    "price": 450
   },
   {
     "playerName": "Shaheen Afridi",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/66833.png",
     "origin": "Pakistan",
     "playerType": "Bowler",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Left-arm fast",
-    "price": 15000000
+    "rating" : "4.5",
+    "price": 400
   },
   {
     "playerName": "Pat Cummins",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/generic/colored/56964.png",
     "origin": "Australia",
     "playerType": "Bowler",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm fast",
-    "price": 16000000
+    "rating" : "4.5",
+    "price": 500
   },
   {
     "playerName": "Trent Boult",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9I4UhUCmMv2xbHZ9AmECN3M4RhcWstjhkSx0EG52W1zPI6JK5ZdTjyVzT&s=10",
     "origin": "New Zealand",
     "playerType": "Bowler",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Left-arm fast-medium",
-    "price": 13500000
+    "rating" : "4.4",
+    "price": 550
   },
   {
     "playerName": "Rashid Khan",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/65748.png",
     "origin": "Afghanistan",
     "playerType": "All-rounder",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm leg break",
-    "price": 15500000
+    "rating" : "4.2",
+    "price": 350
   },
   {
     "playerName": "Ben Stokes",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC30NXcbVOaukOTxxgb5lU7RY418rTuMo_ZGbQiWhelw&s=10",
     "origin": "England",
     "playerType": "All-rounder",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Right-arm fast-medium",
-    "price": 15000000
+    "rating" : "4.4",
+    "price": 400
   },
   {
     "playerName": "Hardik Pandya",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/63751.png",
     "origin": "India",
     "playerType": "All-rounder",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm fast-medium",
-    "price": 14500000
+    "rating" : "4.1",
+    "price": 350
   },
   {
     "playerName": "Mohammad Rizwan",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/8322/20286.png",
     "origin": "Pakistan",
     "playerType": "Wicketkeeper-Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium",
-    "price": 12500000
+    "rating" : "4.2",
+    "price": 300
   },
   {
     "playerName": "Jos Buttler",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/9782.png",
     "origin": "England",
     "playerType": "Wicketkeeper-Batsman",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium",
-    "price": 15000000
+    "rating" : "4.4",
+    "price": 450
   },
   {
     "playerName": "Quinton de Kock",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/28035.png",
     "origin": "South Africa",
     "playerType": "Wicketkeeper-Batsman",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Right-arm medium",
-    "price": 13000000
+    "rating" : "4.3",
+    "price": 450
   },
   {
     "playerName": "Glenn Maxwell",
-    "playerImg": "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/10085.png",
     "origin": "Australia",
     "playerType": "All-rounder",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
-    "price": 13500000
+    "rating" : "4.5",
+    "price": 500
   },
   {
     "playerName": "Andre Russell",
-    "playerImg": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/generic/colored/12047.png",
     "origin": "West Indies",
     "playerType": "All-rounder",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm fast",
-    "price": 14000000
+    "rating" : "4.5",
+    "price": 500
+  },
+  {
+    "playerName": "Litton Kumer Das",
+    "playerImg": "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/5612/63206.png",
+    "origin": "Bangladesh",
+    "playerType": "Wicketkeeper-Batsman",
+    "battingStyle": "Right-hand bat",
+    "bowlingStyle": "Right-arm off break",
+    "rating" : "4.5",
+    "price": 450
   }
 ]

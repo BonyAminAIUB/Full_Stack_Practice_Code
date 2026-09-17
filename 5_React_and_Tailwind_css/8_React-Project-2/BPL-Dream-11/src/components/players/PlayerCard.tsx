@@ -1,138 +1,125 @@
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { Iplayer } from "../../types/player";
-import 
+import { FaUser } from "react-icons/fa";
+import { FaFlag } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
-const PlayerCard = ({ player }: { player: Iplayer }) => {
+interface IPlayerCardProps {
+  player : Iplayer;
+  coin : number;
+  setCoin : Dispatch<SetStateAction<number>>;
+}
+
+const PlayerCard = ({ player, coin, setCoin }: IPlayerCardProps ) => {
+
+    const [isSelected, setIsSelected] = useState(false);
+
+    const handleSelectPlayer = () => {
+        setIsSelected(true);
+        const newCoinPrice = coin - player.price;
+        if(newCoinPrice >= 0){
+            setCoin(newCoinPrice);
+            toast.success(`${player.playerName} is purchased successfully`);
+        }
+        else{
+            toast.error("Coin is not enough to purchase");
+        }
+    }
+
     return (
-        <div className="group w-full overflow-hidden rounded-2xl border border-base-300 bg-base-100 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <div className="group w-full overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
 
             {/* Player Image */}
-            <div className="relative m-3 overflow-hidden rounded-xl bg-gradient-to-br from-blue-100 via-sky-50 to-indigo-100 dark:from-slate-800 dark:via-slate-700 dark:to-blue-950">
-
+            <div className="relative overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
                 <img
-                    src={playerImg}
-                    alt={playerName}
-                    className="h-56 w-full object-cover object-top transition duration-500 group-hover:scale-105 sm:h-64"
+                    src={player.playerImg}
+                    alt={player.playerName}
+                    className="h-44 w-full object-cover object-top transition duration-500 group-hover:scale-105 sm:h-48 lg:h-52"
                 />
 
-                <div className="absolute right-3 top-3">
-                    <span className="badge border-0 bg-white/90 px-3 py-3 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur-sm">
-                        {playerType}
+                <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-semibold text-slate-700 shadow-sm backdrop-blur-sm sm:text-xs">
+                    {player.playerType}
+                </span>
+            </div>
+
+            {/* Player Name */}
+            <div className="mt-4 flex items-center gap-2">
+                <FaUser className="shrink-0 text-lg text-slate-700 dark:text-slate-300 sm:text-xl" />
+
+                <h2 className="truncate text-base font-bold text-slate-800 dark:text-white sm:text-lg">
+                    {player.playerName}
+                </h2>
+            </div>
+
+            {/* Country & Player Type */}
+            <div className="mt-3 flex items-center justify-between gap-2">
+                <div className="flex min-w-0 items-center gap-2 text-xs text-slate-500 sm:text-sm">
+                    <FaFlag className="shrink-0 text-slate-400" />
+
+                    <span className="truncate">
+                        {player.origin}
                     </span>
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
+                <span className="shrink-0 rounded-md bg-slate-100 px-2.5 py-1.5 text-[10px] font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300 sm:text-xs">
+                    {player.playerType}
+                </span>
             </div>
 
-            {/* Card Content */}
-            <div className="px-4 pb-4 sm:px-5 sm:pb-5">
+            {/* Divider */}
+            <div className="my-4 border-t border-slate-200 dark:border-slate-700" />
 
-                {/* Player Name & Origin */}
-                <div className="mb-4">
-                    <h2 className="truncate text-xl font-bold text-base-content sm:text-2xl">
-                        {playerName}
-                    </h2>
-
-                    <div className="mt-1 flex items-center gap-1.5 text-sm text-base-content/60">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={1.8}
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 21s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"
-                            />
-                            <circle cx="12" cy="10" r="2.5" />
-                        </svg>
-
-                        <span>{origin}</span>
-                    </div>
-                </div>
-
-                <div className="divider my-0 mb-4" />
-
-                {/* Rating & Batting Style */}
-                <div className="mb-4 grid grid-cols-2 gap-3">
-
-                    <div>
-                        <p className="mb-1 text-xs font-medium text-base-content/60">
-                            Rating
-                        </p>
-
-                        <div className="flex items-center gap-1">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4 fill-amber-400 text-amber-400"
-                                viewBox="0 0 24 24"
-                            >
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                            </svg>
-
-                            <span className="text-sm font-semibold text-base-content">
-                                4.8
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="text-right">
-                        <p className="mb-1 text-xs font-medium text-base-content/60">
-                            Batting Style
-                        </p>
-
-                        <p className="truncate text-sm font-medium text-base-content">
-                            {battingStyle}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Player Details */}
-                <div className="space-y-3 rounded-xl bg-base-200/60 p-3">
-
-                    <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm text-base-content/60">
-                            Bowling Style
-                        </span>
-
-                        <span className="max-w-[60%] truncate text-right text-sm font-medium text-base-content">
-                            {bowlingStyle}
-                        </span>
-                    </div>
-
-                    <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm text-base-content/60">
-                            Player Type
-                        </span>
-
-                        <span className="badge badge-sm badge-info badge-outline">
-                            {playerType}
-                        </span>
-                    </div>
-                </div>
-
-                {/* Price & Button */}
-                <div className="mt-5 flex items-center justify-between gap-3">
-
-                    <div>
-                        <p className="text-xs text-base-content/60">
-                            Price
-                        </p>
-
-                        <p className="text-lg font-bold text-primary sm:text-xl">
-                            ৳{price.toLocaleString("en-BD")}
-                        </p>
-                    </div>
-
-                    <button className="btn btn-primary btn-sm rounded-lg px-4 shadow-sm transition hover:scale-105 sm:btn-md">
-                        Choose Player
-                    </button>
-                </div>
-
+            {/* Rating */}
+            <div className="mb-4">
+                <p className="text-xs font-semibold text-slate-500 sm:text-sm">
+                    Rating: {player.rating}
+                </p>
             </div>
+
+            {/* Batting & Bowling Style */}
+            <div className="mb-4 space-y-2">
+                <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 sm:text-sm">
+                        Batting Style
+                    </p>
+
+                    <p className="truncate text-right text-xs text-slate-500 sm:text-sm">
+                        {player.battingStyle}
+                    </p>
+                </div>
+
+                <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 sm:text-sm">
+                        Bowling Style
+                    </p>
+
+                    <p className="max-w-[55%] truncate text-right text-xs text-slate-500 sm:text-sm">
+                        {player.bowlingStyle}
+                    </p>
+                </div>
+            </div>
+
+            {/* Price & Button */}
+            <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                    <p className="text-xs text-slate-500">
+                        Price
+                    </p>
+
+                    <p className="truncate text-base font-extrabold text-emerald-600 sm:text-lg">
+                        ${player.price.toLocaleString("en-US")}
+                    </p>
+                </div>
+
+                <button onClick={() => handleSelectPlayer()} className={`rounded-lg border border-emerald-500 bg-emerald-500 px-3 py-2 text-xs font-semibold text-white transition-all duration-300 hover:bg-emerald-600 hover:shadow-md sm:px-4 sm:text-sm`}
+                    disabled={isSelected ? true : false}
+                    >
+                    {isSelected ? "Selected" : "Choose Player"}
+                </button>
+            </div>
+
         </div>
-    )
-}
+    );
+};
+
 export default PlayerCard;

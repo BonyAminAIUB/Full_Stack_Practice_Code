@@ -1,3 +1,4 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { Iplayer } from "../../types/player";
 import PlayerCard from "./PlayerCard";
 
@@ -5,13 +6,16 @@ import PlayerCard from "./PlayerCard";
 
 interface AvailablePlayersProps {
   players: Iplayer[];
+  coin : number;
+  setCoin : Dispatch<SetStateAction<number>>;
 }
 
-const AvailablePlayers = ({ players }: AvailablePlayersProps) => {
+const AvailablePlayers = ({ players, coin, setCoin }: AvailablePlayersProps) => {
+  
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {players.map((player: Iplayer, index:number) => {
-        return <PlayerCard key={index} player={player} />;
+        return <PlayerCard key={index} player={player} coin={coin} setCoin={setCoin} />;
       })}
     </div>
   );
