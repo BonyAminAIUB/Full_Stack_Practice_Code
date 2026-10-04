@@ -6,13 +6,15 @@ import Players from './components/players/Players';
 import './types/player';
 import type { Iplayer } from './types/player';
 
-const playersPromise = async ():Promise<Iplayer[]> => {
+const playersFetch = async ():Promise<Iplayer[]> => {
   const res = await fetch('/data.json');
   const data = await res.json();
   return data;
 }
 
 function App() {
+
+  const [playersPromise] = useState(() => playersFetch());
 
   const [coin, setCoin] = useState(4000);
 
@@ -21,7 +23,7 @@ function App() {
       <Nav coin={coin}></Nav>
       <Banner></Banner>
       <Suspense fallback={<h2>Loading...</h2>}>
-        <Players playersPromise={playersPromise()} coin={coin} setCoin={setCoin}></Players>
+        <Players playersPromise={playersPromise} coin={coin} setCoin={setCoin}></Players>
       </Suspense>
     </>
   )

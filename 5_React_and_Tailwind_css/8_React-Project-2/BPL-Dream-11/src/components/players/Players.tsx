@@ -12,7 +12,8 @@ interface PlayerProps {
 const Players = ({ playersPromise, coin, setCoin }: PlayerProps) => {
     const players = use(playersPromise);
 
-    const [buttonType, setButtonType] = useState("available");
+    const [buttonType, setButtonType] = useState<"available" | "selected">("available");
+    const [selectedPlayers, setSelectedPlayers] = useState<Iplayer[]>([]);
 
     const handleUpdateBtnType = (type: "available" | "selected") => {
         setButtonType(type);
@@ -27,7 +28,7 @@ const Players = ({ playersPromise, coin, setCoin }: PlayerProps) => {
                     <button onClick={() => handleUpdateBtnType("selected")} className={`btn ${buttonType === "selected" ? "btn-warning" : ""} rounded-r-none`}>Selected</button>
                 </div>
             </div>
-            {buttonType === "available" ? (<AvailablePlayers players={players} coin={coin} setCoin={setCoin}></AvailablePlayers>) : (<SelectedPlayers></SelectedPlayers>)}
+            {buttonType === "available" ? (<AvailablePlayers players={players} coin={coin} setCoin={setCoin} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers}></AvailablePlayers>) : (<SelectedPlayers selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} coin={coin} setCoin={setCoin}></SelectedPlayers>)}
         </div>
     );
 };

@@ -1,10 +1,28 @@
+import type { Dispatch, SetStateAction } from "react";
+import type { Iplayer } from "../../types/player";
+import SelectedPlayerCard from "./SelectedPlayerCard";
 
+interface ISelectedPlayersProps {
+    selectedPlayers: Iplayer[];
+    setSelectedPlayers: Dispatch<SetStateAction<Iplayer[]>>;
+    coin : number;
+    setCoin : Dispatch<SetStateAction<number>>;
+}
 
-const SelectedPlayers = ({ prop }) => {
-    
+const SelectedPlayers = ({ selectedPlayers, setSelectedPlayers, coin, setCoin }: ISelectedPlayersProps) => {
+
+    if(selectedPlayers.length === 0){
+        return <h2 className="font-bold text-3xl my-10 text-center text-red-500">No selected players</h2>
+    }
+
     return (
-        <div>
-           
+        <div className="grid grid-cols-1 gap-7 mt-6">
+            {
+                selectedPlayers.map((player: Iplayer, index:number) => {
+                    return (
+                        <SelectedPlayerCard coin={coin} setCoin={setCoin} player={player} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} key={index}></SelectedPlayerCard>
+                    )
+                })}
         </div>
     )
 }

@@ -8,9 +8,11 @@ interface IPlayerCardProps {
   player : Iplayer;
   coin : number;
   setCoin : Dispatch<SetStateAction<number>>;
+  selectedPlayers : Iplayer[];
+  setSelectedPlayers : Dispatch<SetStateAction<Iplayer[]>>;
 }
 
-const PlayerCard = ({ player, coin, setCoin }: IPlayerCardProps ) => {
+const PlayerCard = ({ player, coin, setCoin, selectedPlayers, setSelectedPlayers }: IPlayerCardProps ) => {
 
     const [isSelected, setIsSelected] = useState(false);
 
@@ -24,6 +26,9 @@ const PlayerCard = ({ player, coin, setCoin }: IPlayerCardProps ) => {
         else{
             toast.error("Coin is not enough to purchase");
         }
+
+        // Selected Players Logic
+        setSelectedPlayers([...selectedPlayers, player]);
     }
 
     return (
