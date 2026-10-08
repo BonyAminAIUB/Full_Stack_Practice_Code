@@ -12,7 +12,7 @@ const NavBar = () => {
           <li className="text-1xl text-black hover:text-blue-500"><Link href="/apps">Apps</Link></li>
           <li className="text-1xl text-black hover:text-blue-500"><Link href="/installation">Installation</Link></li>
         </ul>
-        <button className="btn btn-success">Success</button>
+        <button className="btn btn-success">Contribute</button>
       </nav>
    </div>
   );
