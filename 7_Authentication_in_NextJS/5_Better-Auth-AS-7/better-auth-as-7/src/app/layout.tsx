@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import "./globals.css";
+import { Hind_Siliguri } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const hindSiliguri = Hind_Siliguri({
+  variable: "--font-hind-siliguri",
+  subsets: ["bengali"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Bajar Dor",
+  description: "Bajar Dor web app",
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="bn" data-scroll-behavior="smooth" className={`${hindSiliguri.className} h-full antialiased`}>
+      <body className="flex min-h-full flex-col font-bangla">
+        <Header/>
+        <main className="mx-auto w-full max-w-7xl">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
