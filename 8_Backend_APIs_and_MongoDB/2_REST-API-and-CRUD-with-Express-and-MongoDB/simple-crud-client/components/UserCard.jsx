@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,9 +8,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation"
+import UpdateUserDialog from "./UpdateUserDialog";
 
 const UserCard = ({ user }) => {
+
+  const {_id} = user;
+  const router = useRouter();
+
+  const handleDeleteUser = async (id) => {
+    const res = await fetch(`http://localhost:5000/users/${id}`, {
+      method: 'DELETE',
+    });
+
+    const afterDelete = await res.json();
+    console.log('After delete', afterDelete);
+    if(afterDelete.deletedCount > 0){
+      console.log('User deleted successfully');
+      router.refresh();
+    }
+  }
+
   return (
     <Card className="mx-auto w-full max-w-sm">
       <CardHeader>
@@ -30,6 +51,8 @@ const UserCard = ({ user }) => {
             View Details
           </Button>
         </Link>
+          <UpdateUserDialog user={user} ></UpdateUserDialog>
+          <Button onClick={() => handleDeleteUser(_id)} variant="destructive">Delete</Button>
       </CardFooter>
     </Card>
   );

@@ -1,6 +1,6 @@
 import express, { response } from 'express';
 import cors from 'cors';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import 'dotenv/config';
 
 const app = express();
@@ -39,6 +39,16 @@ app.get('/users', async (req, res) => {
     res.send(allUsers);
 })
 
+app.get('/users/:id', async (req, res) => {
+    console.log('Params in the server', req.params);
+    const id = req.params.id;
+
+    const query = { _id: new ObjectId(id) }
+
+    const result = await users.findOne(query);
+    res.send(result);
+})
+
 app.post('/users', async (req, res) => {
     const newUser = req.body;
 
@@ -46,6 +56,30 @@ app.post('/users', async (req, res) => {
 
     const result = await users.insertOne(newUser);
     response.send(result);
+})
+
+app.patch('/users/:id', async (req, res) => {
+    const id = req.params.id;
+    const updateUser = req.body;
+
+    console.log('Update user with ID:', id, 'with data: ', updateUser);
+    const filter = {_id: new ObjectId(id)}
+    const options = {upsert: true};
+    const updateDoc = {
+        $set:{
+            name: updateUser.name,
+            email: updateUser.email
+        }
+    }
+    const result = await users.updateOne(filter, updateDoc, options);
+    res.send(result);
+})
+
+app.delete('/users/:id', async (req, res) => {
+    const id = req.params.id;
+    const query = {_id: new ObjectId(id)}
+    const result = await users.deleteOne(query);
+    res.send(result);
 })
 
 app.listen(port, () => {
