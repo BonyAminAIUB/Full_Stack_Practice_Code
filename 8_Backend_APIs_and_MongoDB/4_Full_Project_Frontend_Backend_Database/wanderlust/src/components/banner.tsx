@@ -38,7 +38,7 @@ export function Banner() {
       />
 
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/25 to-black/10"
+        className="absolute inset-0 bg-linear-to-b from-black/30 via-black/25 to-black/10"
         aria-hidden="true"
       />
 
@@ -50,7 +50,7 @@ export function Banner() {
             Next Adventure
           </h1>
 
-          <p className="mt-4 max-w-[520px] text-sm leading-relaxed text-white/90 sm:text-[15px]">
+          <p className="mt-4 max-w-130 text-sm leading-relaxed text-white/90 sm:text-[15px]">
             Explore breathtaking destinations and create unforgettable memories
             with our curated travel experiences.
           </p>
@@ -58,7 +58,7 @@ export function Banner() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/destinations"
-              className="inline-flex h-12 items-center justify-center gap-2 bg-[#15a1bf] px-4 text-xs font-semibold tracking-[0.1em] text-white uppercase transition-colors hover:bg-[#1290aa] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex h-12 items-center justify-center gap-2 bg-[#15a1bf] px-4 text-xs font-semibold tracking-widest text-white uppercase transition-colors hover:bg-[#1290aa] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Explore Now
               <MoveRightIcon className="size-5" strokeWidth={1.5} />
@@ -66,7 +66,7 @@ export function Banner() {
 
             <Link
               href="/destinations"
-              className="inline-flex h-12 items-center justify-center bg-white/25 px-4 text-xs font-semibold tracking-[0.1em] text-white uppercase backdrop-blur-[2px] transition-colors hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex h-12 items-center justify-center bg-white/25 px-4 text-xs font-semibold tracking-widest text-white uppercase backdrop-blur-[2px] transition-colors hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               View Destination
             </Link>
@@ -82,7 +82,7 @@ export function Banner() {
         {searchFields.map((field) => (
           <label
             key={field.name}
-            className="flex min-h-16 flex-col justify-center border-b border-white/40 px-5 py-3 md:min-h-[76px] md:border-r md:border-b-0"
+            className="flex min-h-16 flex-col justify-center border-b border-white/40 px-5 py-3 md:min-h-19 md:border-r md:border-b-0"
           >
             <span className="text-[15px] leading-5 font-medium text-neutral-800">
               {field.label}
@@ -97,7 +97,7 @@ export function Banner() {
 
         <button
           type="submit"
-          className="min-h-12 bg-[#15a1bf] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#1290aa] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white md:min-h-[76px]"
+          className="min-h-12 bg-[#15a1bf] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#1290aa] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white md:min-h-19"
         >
           Search
         </button>
