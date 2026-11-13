@@ -90,7 +90,11 @@ function DestinationCard({ destination }: { destination: Destination }) {
         </p>
 
         <Link
-          href="/bookings"
+          href={
+            destination._id
+              ? `/destinations/${destination._id}`
+              : "/destinations"
+          }
           className="mt-2 inline-flex items-center gap-1 text-[10px] font-medium uppercase text-[#109db9] transition-colors hover:text-[#087b92]"
         >
           Book now
@@ -116,7 +120,7 @@ export default async function AllDestinationsPage() {
 
   return (
     <main className="min-h-[60vh] flex-1 bg-white px-6 py-6 sm:px-8">
-      <div className="mx-auto max-w-[684px]">
+      <div className="mx-auto max-w-171">
         {loadError ? (
           <p role="alert" className="py-8 text-center text-sm text-red-700">
             {loadError}
