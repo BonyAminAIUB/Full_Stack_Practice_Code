@@ -60,7 +60,7 @@ function DestinationCard({ destination }: { destination: Destination }) {
           fill
           unoptimized
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 220px"
-          className="object-cover"
+          className="object-contain"
         />
         <div className="absolute top-2 right-2 inline-flex items-center gap-1 bg-white/90 px-2 py-1 text-[10px] font-medium text-neutral-900">
           4.5

@@ -11,11 +11,15 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Stack & layout
 - Next.js 16.4.3 App Router, React 19.3, TypeScript strict, Tailwind CSS 4. Single app under `src/app`; `@/*` maps to `src/*`.
 - README is stale create-next-app boilerplate: the page is `src/app/page.tsx`, not `app/page.tsx`.
-- Frontend-only right now: the home page is built from `src/components/navbar.tsx` and `src/components/banner.tsx`; there are no API routes, database, or auth. UI assets are committed under `public/images/` (raw design files: sibling `../wanderlust-resources/`).
+- The Next.js frontend is under `src/app`, with shared components in `src/components` and shadcn/Base UI primitives in `src/components/ui`. UI assets are committed under `public/images/` (design source files are in sibling `../wanderlust-resources/`).
+- The companion Express/MongoDB backend is in sibling `../wanderlust-server/`, listens on port `8000`, and serves `GET /destinations`, `GET /destination/:id`, `POST /add-destination`, `PATCH /destination/:id`, and `DELETE /destination/:id`.
+- Destination list and detail pages fetch data from that backend. Editing is implemented in `src/components/EditDestinationDialog.tsx`; its form Cancel button only closes the edit dialog. Deletion is separate in `src/components/DeleteDestinationDialog.tsx`, shown beside Edit on the destination detail page; confirming deletion calls the backend and navigates to `/destinations`.
+- Destination card images use `object-contain` to avoid cropping. Detail-page images preserve their natural aspect ratio and are centered within the content width, capped at 380px tall.
+- When changing API-backed destination behavior, keep the frontend request method/path and backend route in sync. Restart the backend after editing `wanderlust-server/index.js`.
 
 ## Commands
 - `npm run dev` / `npm run build` — Turbopack; `npm run start` serves the build. Build currently succeeds.
-- `npm run lint` — bare `eslint` over the repo. Baseline fails on `src/components/ui/carousel.tsx:98` and `src/hooks/use-mobile.ts:14` (`react-hooks/set-state-in-effect`), both pre-existing in shadcn-generated code. Lint a changed file with `npx eslint <file>` instead of treating the global failure as your regression.
+- `npm run lint` — bare `eslint` over the repo. Existing generated UI code may have lint issues; lint changed files with `npx eslint <file>` to isolate regressions.
 - `npx tsc --noEmit` — typecheck (no `typecheck` script).
 - No test runner exists.
 
@@ -26,8 +30,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Add primitives with the local CLI: `npx shadcn add <name>` (4.23.0, reads `components.json`).
 
 ## Next.js 16 rendering
-- `cacheComponents: true` + `partialPrefetching: true`: PPR is always on and routes prerender a static shell.
-- Exporting `dynamic`, `revalidate`, or `fetchCache` from a route segment errors under Cache Components; `runtime` exports (including `runtime = 'nodejs'`) are unsupported. Use `"use cache"` + `cacheLife`/`cacheTag`, or wrap uncached async/request-time data in `<Suspense>`.
+- Current `next.config.ts` sets `cacheComponents: false` and `partialPrefetching: false`; check the actual config before applying Cache Components-specific constraints.
 - `reactCompiler: true` is enabled; ESLint's `react-hooks` rules are strict (source of the two baseline errors).
 
 ## Gotchas

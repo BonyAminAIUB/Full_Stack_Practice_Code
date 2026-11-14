@@ -107,7 +107,7 @@ export function Footer() {
             <address className="mt-3 space-y-2.5 text-xs not-italic text-neutral-400">
               <p>
                 <a className="transition-colors hover:text-white" href="tel:7869011622">
-                  786 901 1622
+                  01234567890
                 </a>
               </p>
               <p>

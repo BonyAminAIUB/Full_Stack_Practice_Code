@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -8,9 +7,9 @@ import {
   Check,
   MapPin,
   Star,
-  Trash2,
 } from "lucide-react";
 import EditDestinationDialog from "@/components/EditDestinationDialog";
+import DeleteDestinationDialog from "@/components/DeleteDestinationDialog";
 import type { Destination } from "@/components/EditDestinationDialog";
 
 async function getDestination(id: string): Promise<Destination> {
@@ -66,12 +65,12 @@ export default async function DestinationDetailsPage({
   ];
   console.log(destination);
   return (
-    <main className="flex-1 bg-white px-5 py-7 sm:px-8">
-      <div className="mx-auto max-w-172">
-        <div className="mb-3 flex items-center justify-between">
+    <main className="flex-1 bg-white px-5 py-8 sm:px-8 sm:py-10">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-5 flex items-center justify-between">
           <Link
             href="/destinations"
-            className="inline-flex items-center gap-2 text-[11px] text-neutral-500 transition-colors hover:text-[#13A5BF]"
+            className="inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-[#13A5BF]"
           >
             <ArrowLeft className="size-3" aria-hidden="true" />
             Back to Destinations
@@ -79,80 +78,74 @@ export default async function DestinationDetailsPage({
 
           <div className="flex items-center gap-2">
             <EditDestinationDialog destination={destination} />
-            <Link
-              href="/destinations"
-              className="inline-flex h-7 items-center gap-1.5 border border-red-300 px-3 text-[10px] text-red-600 transition-colors hover:bg-red-50"
-            >
-              <Trash2 className="size-3" aria-hidden="true" />
-              Cancel
-            </Link>
+            <DeleteDestinationDialog
+              destinationId={destination._id}
+              destinationName={destination.name}
+            />
           </div>
         </div>
 
-        <div className="relative aspect-[2.54] w-full overflow-hidden bg-neutral-100">
-          <Image
+        <div className="flex w-full justify-center">
+          <img
             src={destination.imageUrl}
             alt={`${destination.name}, ${destination.country}`}
-            fill
-            unoptimized
-            priority
-            sizes="(max-width: 720px) 100vw, 688px"
-            className="object-cover"
+            fetchPriority="high"
+            className="block h-auto max-h-[380px] max-w-full w-auto"
           />
         </div>
 
-        <div className="mt-5 border-t border-neutral-100 pt-5">
-          <div className="grid gap-8 md:grid-cols-[1fr_215px]">
+        <div className="mt-8 border-t border-neutral-100 pt-7">
+          <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_280px]">
             <section>
-              <p className="flex items-center gap-1.5 text-[10px] text-neutral-600">
-                <MapPin className="size-3" aria-hidden="true" />
+              <p className="flex items-center gap-1.5 text-sm text-neutral-600">
+                <MapPin className="size-4" aria-hidden="true" />
                 {destination.country}
               </p>
 
-              <h1 className="mt-1 text-[30px] leading-tight font-light tracking-[-0.06em] text-neutral-950">
+              <h1 className="mt-2 text-3xl leading-tight font-light tracking-[-0.05em] text-neutral-950 sm:text-4xl">
                 {destination.name}
               </h1>
 
-              <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px]">
+              <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
                 <span className="inline-flex items-center gap-1 font-medium text-neutral-900">
                   <Star
-                    className="size-3 fill-green-600 text-green-600"
+                    className="size-4 fill-green-600 text-green-600"
                     aria-hidden="true"
                   />
                   4.9
                 </span>
                 <span className="text-neutral-500">(234 reviews)</span>
-                <span className="inline-flex items-center gap-1 font-medium text-neutral-900">
-                  <CalendarDays className="size-3" aria-hidden="true" />
+                <span className="inline-flex items-center gap-1.5 font-medium text-neutral-900">
+                  <CalendarDays className="size-4" aria-hidden="true" />
                   {destination.duration}
                 </span>
               </div>
 
-              <div className="mt-5">
-                <h2 className="text-base font-medium tracking-tight text-neutral-950">
+              <div className="mt-8">
+                <h2 className="text-xl font-medium tracking-tight text-neutral-950">
                   Overview
                 </h2>
-                <p className="mt-2 text-[10px] leading-[1.55] text-neutral-500">
+                <p className="mt-2 text-sm leading-6 text-neutral-600">
                   {description}
                 </p>
               </div>
 
-              <div className="mt-5">
-                <h2 className="text-base font-medium tracking-tight text-neutral-950">
+              <div className="mt-7">
+                <h2 className="text-xl font-medium tracking-tight text-neutral-950">
                   Highlights
                 </h2>
-                <p className="mt-2 text-[10px] leading-[1.55] text-neutral-500">
+                <p className="mt-2 text-sm leading-6 text-neutral-600">
                   {description}
                 </p>
 
-                <ul className="mt-3 grid gap-x-4 gap-y-2 sm:grid-cols-2">
+                <ul className="mt-4 grid gap-x-5 gap-y-3 sm:grid-cols-2">
                   {highlights.map((highlight) => (
                     <li
                       key={highlight}
-                      className="flex items-start gap-1.5 text-[9px] leading-4 text-neutral-600"
+                      className="flex items-start gap-2 text-xs leading-5 text-neutral-600"
                     >
                       <Check
-                        className="mt-0.5 size-3 shrink-0 text-green-600"
+                        className="mt-0.5 size-4 shrink-0 text-green-600"
                         aria-hidden="true"
                       />
                       {highlight}
@@ -162,26 +155,26 @@ export default async function DestinationDetailsPage({
               </div>
             </section>
 
-            <aside className="h-fit border border-neutral-200 p-3 shadow-sm">
-              <p className="text-[9px] text-neutral-500">Starting from</p>
-              <p className="text-xl leading-6 font-semibold text-[#13A5BF]">
+            <aside className="h-fit border border-neutral-200 p-5 shadow-sm">
+              <p className="text-xs text-neutral-500">Starting from</p>
+              <p className="mt-1 text-3xl leading-8 font-semibold text-[#13A5BF]">
                 ${displayPrice}
               </p>
-              <p className="text-[9px] text-neutral-500">per person</p>
+              <p className="text-xs text-neutral-500">per person</p>
 
-              <div className="mt-6 flex h-7 items-center border border-neutral-100 bg-[#f7f8f9] px-2 text-[9px] text-neutral-800">
+              <div className="mt-6 flex h-10 items-center border border-neutral-100 bg-[#f7f8f9] px-3 text-xs text-neutral-800">
                 {departureDate || "Choose departure date"}
               </div>
 
               <Link
                 href="/bookings"
-                className="mt-3 flex h-7.5 items-center justify-center gap-2 bg-[#13A5BF] text-[9px] font-medium text-white transition-colors hover:bg-[#108da4]"
+                className="mt-3 flex h-10 items-center justify-center gap-2 bg-[#13A5BF] text-sm font-medium text-white transition-colors hover:bg-[#108da4]"
               >
                 Book Now
-                <ArrowRight className="size-3" aria-hidden="true" />
+                <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
 
-              <ul className="mt-3 space-y-1.5">
+              <ul               className="mt-4 space-y-2.5">
                 {[
                   "Free cancellation up to 7 days",
                   "Travel insurance included",
@@ -189,10 +182,10 @@ export default async function DestinationDetailsPage({
                 ].map((benefit) => (
                   <li
                     key={benefit}
-                    className="flex items-start gap-1.5 text-[8px] leading-3 text-neutral-500"
+                    className="flex items-start gap-2 text-xs leading-4 text-neutral-600"
                   >
                     <Check
-                      className="size-3 shrink-0 text-green-600"
+                      className="size-4 shrink-0 text-green-600"
                       aria-hidden="true"
                     />
                     {benefit}
