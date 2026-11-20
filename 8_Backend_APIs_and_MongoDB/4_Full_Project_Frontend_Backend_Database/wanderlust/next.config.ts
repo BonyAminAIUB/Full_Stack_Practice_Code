@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   cacheComponents: false,
   partialPrefetching: false,
   reactCompiler: true,
+<<<<<<< HEAD
   images: {
     // Hosts that serve the destination images from the backend.
     // Omitting pathname/search allows every path and query string
@@ -20,6 +21,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "storage.karmagroup.com" },
       { protocol: "https", hostname: "www.sundarbantigerroarresort.com" },
     ],
+=======
+  experimental: {
+    agentUpgrade: "security",
+>>>>>>> c318b4b57efb62a00e8fa0392c8cbacff8beea26
   },
   turbopack: {
     rules: {
