@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import {
   ArrowLeft,
-  ArrowRight,
   CalendarDays,
   Check,
   MapPin,
@@ -11,18 +11,16 @@ import {
 import EditDestinationDialog from "@/components/EditDestinationDialog";
 import DeleteDestinationDialog from "@/components/DeleteDestinationDialog";
 import type { Destination } from "@/components/EditDestinationDialog";
+import BookingCard from "@/components/booking/BookingCard";
 
 async function getDestination(id: string): Promise<Destination> {
-  const response = await fetch(
-    `http://localhost:8000/destination/${encodeURIComponent(id)}`,
-    { cache: "no-store" },
-  );
+  const url = `http://localhost:8000/destination/${encodeURIComponent(id)}`;
+  const response = await fetch(url, { cache: "no-store" });
 
   if (!response.ok) {
     if (response.status === 404 || response.status === 400) {
       notFound();
     }
-
     throw new Error(`Could not load destination (${response.status}).`);
   }
 
@@ -35,6 +33,15 @@ async function getDestination(id: string): Promise<Destination> {
   return destination;
 }
 
+const highlights = [
+  "Luxury beachfront accommodation",
+  "Visit local landmarks and attractions",
+  "Traditional local cuisine experience",
+  "Guided cultural tour",
+  "Scenic trip to nearby viewpoints",
+  "Free time to explore at your own pace",
+];
+
 export default async function DestinationDetailsPage({
   params,
 }: {
@@ -42,31 +49,17 @@ export default async function DestinationDetailsPage({
 }) {
   const { id } = await params;
   const destination = await getDestination(id);
-  const price = Number(destination.price);
-  const displayPrice = Number.isFinite(price)
-    ? price.toLocaleString("en-US")
-    : destination.price;
-  const departureDate = destination.departureDate
-    ? new Date(`${destination.departureDate}T00:00:00`).toLocaleDateString(
-        "en-US",
-      )
-    : "";
+
   const description =
     destination.description ||
     `Discover the magic of ${destination.name} in ${destination.country}, with beautiful scenery, local culture, and unforgettable experiences.`;
 
-  const highlights = [
-    "Luxury beachfront accommodation",
-    "Visit local landmarks and attractions",
-    "Traditional local cuisine experience",
-    "Guided cultural tour",
-    "Scenic trip to nearby viewpoints",
-    "Free time to explore at your own pace",
-  ];
   console.log(destination);
+
   return (
     <main className="flex-1 bg-white px-5 py-8 sm:px-8 sm:py-10">
       <div className="mx-auto max-w-5xl">
+       
         <div className="mb-5 flex items-center justify-between">
           <Link
             href="/destinations"
@@ -85,15 +78,19 @@ export default async function DestinationDetailsPage({
           </div>
         </div>
 
+        {/* Destination image */}
         <div className="flex w-full justify-center">
-          <img
+          <Image
             src={destination.imageUrl}
             alt={`${destination.name}, ${destination.country}`}
+            width={800}
+            height={380}
             fetchPriority="high"
-            className="block h-auto max-h-[380px] max-w-full w-auto"
+            className="block h-auto max-h-95 w-auto max-w-full"
           />
         </div>
 
+        {/* Details: main content on the left, booking box on the right */}
         <div className="mt-8 border-t border-neutral-100 pt-7">
           <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_280px]">
             <section>
@@ -102,7 +99,7 @@ export default async function DestinationDetailsPage({
                 {destination.country}
               </p>
 
-              <h1 className="mt-2 text-3xl leading-tight font-light tracking-[-0.05em] text-neutral-950 sm:text-4xl">
+              <h1 className="mt-2 text-3xl leading-tight font-light tracking-tighter text-neutral-950 sm:text-4xl">
                 {destination.name}
               </h1>
 
@@ -121,6 +118,7 @@ export default async function DestinationDetailsPage({
                 </span>
               </div>
 
+              {/* Overview */}
               <div className="mt-8">
                 <h2 className="text-xl font-medium tracking-tight text-neutral-950">
                   Overview
@@ -130,6 +128,7 @@ export default async function DestinationDetailsPage({
                 </p>
               </div>
 
+              {/* Highlights */}
               <div className="mt-7">
                 <h2 className="text-xl font-medium tracking-tight text-neutral-950">
                   Highlights
@@ -154,45 +153,7 @@ export default async function DestinationDetailsPage({
                 </ul>
               </div>
             </section>
-
-            <aside className="h-fit border border-neutral-200 p-5 shadow-sm">
-              <p className="text-xs text-neutral-500">Starting from</p>
-              <p className="mt-1 text-3xl leading-8 font-semibold text-[#13A5BF]">
-                ${displayPrice}
-              </p>
-              <p className="text-xs text-neutral-500">per person</p>
-
-              <div className="mt-6 flex h-10 items-center border border-neutral-100 bg-[#f7f8f9] px-3 text-xs text-neutral-800">
-                {departureDate || "Choose departure date"}
-              </div>
-
-              <Link
-                href="/bookings"
-                className="mt-3 flex h-10 items-center justify-center gap-2 bg-[#13A5BF] text-sm font-medium text-white transition-colors hover:bg-[#108da4]"
-              >
-                Book Now
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-
-              <ul               className="mt-4 space-y-2.5">
-                {[
-                  "Free cancellation up to 7 days",
-                  "Travel insurance included",
-                  "24/7 customer support",
-                ].map((benefit) => (
-                  <li
-                    key={benefit}
-                    className="flex items-start gap-2 text-xs leading-4 text-neutral-600"
-                  >
-                    <Check
-                      className="size-4 shrink-0 text-green-600"
-                      aria-hidden="true"
-                    />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+            <BookingCard destination={destination}/>
           </div>
         </div>
       </div>

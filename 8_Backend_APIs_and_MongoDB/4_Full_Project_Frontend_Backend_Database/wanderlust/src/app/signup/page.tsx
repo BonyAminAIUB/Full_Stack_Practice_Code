@@ -45,7 +45,7 @@ export default function SignUpPage() {
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
           <CardDescription>
-            Login with your GitHub or Google account
+            Sign Up with your GitHub or Google account
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -82,7 +82,7 @@ export default function SignUpPage() {
                 />
               </Field>
               <Field>
-                <FieldLabel htmlFor="email">ImageUrl</FieldLabel>
+                <FieldLabel htmlFor="image">ImageUrl</FieldLabel>
                 <Input
                   id="image"
                   type="url"
