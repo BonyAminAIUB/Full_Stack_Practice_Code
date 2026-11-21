@@ -2,7 +2,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import type { Destination } from "@/components/EditDestinationDialog";
 import { authClient } from "@/lib/auth-client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Button } from "../ui/button";
 
 const BookingCard = ({ destination }: { destination: Destination }) => {
@@ -30,10 +30,13 @@ const BookingCard = ({ destination }: { destination: Destination }) => {
 
     const displayPrice = formatPrice(destination.price);
 
-    const handleBooking = async (e) => {
+    const handleBooking = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const departureDate = e.target.departureDate.value;
+        const target = e.target as typeof e.target & {
+            departureDate: { value: string };
+        };
+        const departureDate = target.departureDate.value;
         
         const data = {
             username: user?.name,
@@ -41,8 +44,17 @@ const BookingCard = ({ destination }: { destination: Destination }) => {
             image: user?.email,
             ...destination,
             departureDate: departureDate,
+            bookingDate: new Date()
         }
-        console.log(data);
+        const res = await fetch('http://localhost:8000/bookings', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        const bookingRes = await res.json()
+        console.log(bookingRes);
     }
 
     return (
@@ -89,4 +101,4 @@ const BookingCard = ({ destination }: { destination: Destination }) => {
     );
 };
 
-export default BookingCard;
+export default BookingCard

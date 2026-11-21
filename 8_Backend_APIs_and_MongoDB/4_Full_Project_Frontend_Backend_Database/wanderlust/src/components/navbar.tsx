@@ -116,11 +116,11 @@ export function Navbar() {
               <PopoverContent>
                 <PopoverHeader>
                   <PopoverTitle>{user?.name}</PopoverTitle>
-                  <PopoverDescription>
-                    <p>{user?.email}</p>
-                    <Button onClick={handleSignout} variant={"destructive"}>Signout</Button>
-                  </PopoverDescription>
+                  <PopoverDescription>{user?.email}</PopoverDescription>
                 </PopoverHeader>
+                <Button onClick={handleSignout} variant={"destructive"} className="mt-2">
+                  Signout
+                </Button>
               </PopoverContent>
             </Popover> : <><Link
               href="/login"
