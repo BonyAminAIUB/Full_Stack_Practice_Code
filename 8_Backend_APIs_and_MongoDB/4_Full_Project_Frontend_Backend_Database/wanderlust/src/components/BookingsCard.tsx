@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,6 +10,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { Button } from "@base-ui/react";
+import { redirect } from "next/navigation";
 
 export type Booking = {
   _id: string;
@@ -23,6 +25,16 @@ export type Booking = {
 const BookingsCard = ({ booking }: { booking: Booking }) => {
   const status = booking.status || "Confirmed";
   const isPending = status.toLowerCase() === "pending";
+
+  const handleCancelBooking = async() => {
+    const res = await fetch(`http://localhost:8000/my-bookings/${booking._id}`,{
+        method:'DELETE',   
+    });
+    const data = await res.json();
+    console.log(data);
+
+    redirect('/my-bookings');
+  }
 
   return (
     <div className="flex flex-col gap-5 border border-neutral-200 bg-white p-4 sm:flex-row sm:p-5">
@@ -78,6 +90,7 @@ const BookingsCard = ({ booking }: { booking: Booking }) => {
 
           <div className="flex items-center gap-3">
             <Button
+              onClick={handleCancelBooking}
               type="button"
               className="inline-flex h-9 cursor-pointer items-center gap-1.5 border border-red-300 bg-white px-4 text-xs font-medium text-red-500 transition-colors hover:bg-red-50"
             >
