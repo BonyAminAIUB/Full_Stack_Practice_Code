@@ -108,7 +108,7 @@ export function Navbar() {
           </Link>
           {
             user ? <Popover>
-              <PopoverTrigger render={<Avatar>
+              <PopoverTrigger nativeButton={false} render={<Avatar>
                 <AvatarImage referrerPolicy="no-referrer" src={user?.image as string} />
                 <AvatarFallback>{user?.name.charAt(0)}</AvatarFallback>
               </Avatar>}>

@@ -17,30 +17,50 @@ import {
 import { Input } from "@/components/ui/input"
 import { authClient } from "@/lib/auth-client"
 import Link from "next/link"
-import { redirect } from "next/navigation"
+import { useRouter } from "next/navigation"
 import React from "react"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 export default function SignUpPage() {
+  const router = useRouter();
 
-  const handleEmailSignUp = async (e:React.SubmitEvent<HTMLElement>) => {
+  const handleEmailSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const user = Object.fromEntries(formData.entries()) as {name: string, image: string, email: string, password: string};
+    const formData = new FormData(e.currentTarget);
+    const user = Object.fromEntries(formData.entries()) as {
+      name: string;
+      image: string;
+      email: string;
+      password: string;
+    };
 
-    const {data, error} = await authClient.signUp.email({
-      ...user,
-    })   
-    if(data){
-      redirect('/');
-    } 
-    if(error){
-      console.log(error);
+    try {
+      const { data, error } = await authClient.signUp.email({
+        ...user,
+      });
+
+      if (error) {
+        toast.error(error.message || "Sign up failed!");
+        return;
+      }
+
+      if (data) {
+        toast.success("Sign up successful!");
+        setTimeout(() => {
+          router.push("/");
+        }, 1500);
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong!");
     }
-  }
+  };
 
   return (
     <div className="flex flex-col gap-6 max-w-6x mx-auto my-10">
+      <ToastContainer position="top-right" autoClose={3000} />
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
