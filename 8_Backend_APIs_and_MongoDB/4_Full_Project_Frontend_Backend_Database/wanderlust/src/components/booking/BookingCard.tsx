@@ -41,7 +41,7 @@ const BookingCard = ({ destination }: { destination: Destination }) => {
         const data = {
             username: user?.name,
             email: user?.email,
-            image: user?.email,
+            image: user?.image,
             ...destination,
             departureDate: departureDate,
             bookingDate: new Date()

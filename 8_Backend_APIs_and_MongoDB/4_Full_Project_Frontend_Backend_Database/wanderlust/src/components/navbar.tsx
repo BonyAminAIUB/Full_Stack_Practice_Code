@@ -68,9 +68,9 @@ export function Navbar() {
             Add Destination
           </Link>
           <Link
-            href="/bookings"
+            href="/my-bookings"
             aria-current={
-              pathname === "/bookings" || pathname.startsWith("/bookings/")
+              pathname === "/my-bookings" || pathname.startsWith("/my-bookings/")
                 ? "page"
                 : undefined
             }
